@@ -208,7 +208,7 @@ class EDA:
         df['Region'] = df['Region'].map(region_map).fillna(df['Region'])
 
         # Tabs
-        tabs = st.tabs(["기초 통계","연도별 추","지역별 분","변화량 분석","시각"])
+        tabs = st.tabs(["기초 통계","연도별 추이","지역별 분석","변화량 분석","시각"])
         # 1. Basic Stats
         with tabs[0]:
             st.header("Basic Statistics")
