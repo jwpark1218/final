@@ -260,8 +260,8 @@ class EDA:
             axes[1].set_xlabel('Percent Change (%)')
             st.pyplot(fig)
             st.markdown("""
-                **Analysis:** The left chart shows absolute changes over the last five years in thousands,
-                highlighting which regions grew most in population. The right chart shows relative percent changes.
+                **Analysis:** First chart shows absolute changes over the last five years in thousands,
+                highlighting which regions grew most in population. Second chart shows relative percent changes.
             """)
                 # 4. Change Analysis
         with tabs[3]:
