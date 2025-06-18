@@ -208,7 +208,7 @@ class EDA:
         df['Region'] = df['Region'].map(region_map).fillna(df['Region'])
 
         # Tabs
-        tabs = st.tabs(["Basic Stats","Yearly Trend","Regional Analysis","Change Analysis","Visualization"])
+        tabs = st.tabs(["기초 통계","연도별 추","지역별 분","변화량 분석","시각"])
         # 1. Basic Stats
         with tabs[0]:
             st.header("Basic Statistics")
@@ -249,7 +249,7 @@ class EDA:
             pivot['Change'] = pivot[max_year] - pivot[max_year-4]
             pivot['Percent Change'] = pivot['Change'] / pivot[max_year-4] * 100
             pivot['Change_k'] = pivot['Change']/1000
-            fig, axes = plt.subplots(ncols=2, figsize=(12,6))
+            fig, axes = plt.subplots(nrows = 2, ncols=1, figsize=(8,10))
             abs_df = pivot.reset_index().sort_values('Change_k', ascending=False)
             sns.barplot(x='Change_k', y='Region', data=abs_df, ax=axes[0])
             axes[0].set_title('Population Change (Thousands)')
