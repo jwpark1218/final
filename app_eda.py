@@ -267,15 +267,20 @@ class EDA:
         with tabs[3]:
             st.header("Top 100 Yearly Population Changes")
             # Calculate absolute yearly change per region
-            diff_df = df[df['Region']!='Nationwide'].copy()
+            diff_df = df[df['Region'] != 'Nationwide'].copy()
             diff_df['Diff'] = diff_df.groupby('Region')['Population'].diff()
             # Select top 100 increases
             top100 = diff_df.nlargest(100, 'Diff')[['Year', 'Region', 'Diff']]
-            # Format and.style
-                .format({'Diff': '{:,.0f}'})  # thousand separators
-                .background_gradient(cmap='bwr_r', subset=['Diff'])  # positive: blue, negative: red  # red for negative, blue for positive
+
+            # Apply styling and assign to a variable
+            styled = (
+                top100
+                .style
+                .format({'Diff': '{:,.0f}'})                   # thousand separators
+                .background_gradient(cmap='bwr_r', subset=['Diff'])  # positive: blue, negative: red
             )
             st.dataframe(styled)
+
         # 5. Visualization
         with tabs[4]:
             st.header("Cumulative Area Chart by Region")
