@@ -260,8 +260,8 @@ class EDA:
             axes[1].set_xlabel('Percent Change (%)')
             st.pyplot(fig)
             st.markdown("""
-                **Analysis:** First chart shows absolute changes over the last five years in thousands,
-                highlighting which regions grew most in population. Second chart shows relative percent changes.
+                **Analysis:** 첫 번째 차트는 지난 5년 동안의 인구 변화를 천 명 단위로 보여주며, 인구가 가장 많이 증가한 지역을 강조합니다.
+두 번째 차트는 인구 변화의 상대적 백분율을 나타냅니다.
             """)
                 # 4. Change Analysis
         with tabs[3]:
